@@ -29,7 +29,7 @@ check_update() {
     output=$(git pull "$repo_url" 2>&1)
     if echo "$output" | grep -q "Already up to date."; then
         status=1 
-        if  docker ps -a | awk '$2 ~ /#/ {print $7}' | grep -q "Exited" || docker ps -a | awk '$2 ~ /# {print $7}' | grep -q "Exited" ; then 
+        if  docker ps -a | awk '$2 ~ /container_back/ {print $7}' | grep -q "Exited" || docker ps -a | awk '$2 ~ /container_front/ {print $7}' | grep -q "Exited" ; then 
 			echo "##########################################"
             echo "Repo atualizado e container não esta de pé."
 			echo "##########################################"
@@ -64,8 +64,8 @@ if [ "$resultBack" -eq 0 ] || [ "$resultFront" -eq 0 ]; then
     echo "Novo pull encontrado, fazendo o deploy automático e subindo novo container."
     echo "##########################################################################"
 
-    docker ps -a | awk '$2 ~/#/ {print $1}' | xargs docker stop | xargs docker rm
-    docker ps -a | awk '$2 ~/#/ {print $1}' | xargs docker stop | xargs docker rm
+    docker ps -a | awk '$2 ~/container_back/ {print $1}' | xargs docker stop | xargs docker rm
+    docker ps -a | awk '$2 ~/container_front/ {print $1}' | xargs docker stop | xargs docker rm
 
     echo "#########################################################################"
     echo "Parando o container"
