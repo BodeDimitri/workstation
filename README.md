@@ -7,3 +7,5 @@
 - pipes.sh
 - rofi
 - feh
+- gnome-system-monitor
+- nautilus
