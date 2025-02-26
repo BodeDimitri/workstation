@@ -200,6 +200,6 @@ exec_always --no-startup-id polybar
 exec_always --no-startup-id feh --bg-scale --randomize /home/$USER/Pictures/WP/*.jpg
 
 # Lockscreen
-bindsym $mod+l exec /bin/lock
+bindsym $mod+Ctrl+l exec /bin/lock
 exec xautolock -time 10 -locker lock
 
