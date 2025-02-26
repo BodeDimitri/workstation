@@ -1,0 +1,3 @@
+#!/bin/bash
+
+i3lock -i /home/dmitri/Pictures/LS/1.png

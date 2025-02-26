@@ -198,3 +198,8 @@ default_floating_border pixel 1
 # finds out, if available)
 exec_always --no-startup-id polybar
 exec_always --no-startup-id feh --bg-scale --randomize /home/$USER/Pictures/WP/*.jpg
+
+# Lockscreen
+bindsym $mod+l exec /bin/lock
+exec xautolock -time 10 -locker lock
+
