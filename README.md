@@ -8,6 +8,7 @@
 
 ## Pacotes (dependências) 
 - i3 gaps
+- i3lock
 - polybar
 - tilix
 - pipes.sh
