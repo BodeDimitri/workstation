@@ -16,6 +16,7 @@
 - feh
 - gnome-system-monitor
 - nautilus
+- web-greeter
 
 ## Fontes
 - JetBrainsMono Nerd Font Mono
