@@ -1,0 +1,15 @@
+---
+- name: Executa comando modular nas máquinas remotas
+  hosts: servidores
+  become: true
+  vars_files:
+    - group_vars/all.yml
+
+  tasks:
+    - name: Executando comando "{{ comando_custom }}"
+      ansible.builtin.shell: "{{ comando_custom }}"
+      register: resultado
+
+    - name: Exibir resultado
+      debug:
+        var: resultado.stdout
